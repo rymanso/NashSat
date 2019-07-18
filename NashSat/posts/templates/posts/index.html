@@ -1,0 +1,17 @@
+{% extends 'posts/layout.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+<!--<u1 class = "collection">-->
+    {% for post in posts %}
+<!--    <a class="collection-item" href="/posts/details/{{post.id}}">{{post.title}}</a>-->
+    <article class="col-6 col-12-xsmall work-item" href="/posts/details/{{post.id}}">
+	<a class="image fit thumb" href="{% static "images/fulls/01.jpg" %}"><img src="{% static "images/thumbs/01.jpg"%}" alt="" /></a>
+        <h3>{{post.title}}</h3>
+        <p>{{post.body}}</p>
+    </article>
+    {% endfor %}
+
+
+<!--</u1>-->
+{% endblock %}
