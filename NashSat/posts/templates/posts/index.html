@@ -6,7 +6,7 @@
     {% for post in posts %}
 <!--    <a class="collection-item" href="/posts/details/{{post.id}}">{{post.title}}</a>-->
     <article class="col-6 col-12-xsmall work-item" href="/posts/details/{{post.id}}">
-	<a class="image fit thumb" href="{% static "images/fulls/01.jpg" %}"><img src="{% static "images/thumbs/01.jpg"%}" alt="" /></a>
+	<a class="image fit thumb" href= "{% get_static_prefix %}media/{{post.post_image_full}}"><img src="{% get_static_prefix %}media/{{post.post_image_thumb}}"alt="" /></a>
         <h3>{{post.title}}</h3>
         <p>{{post.body}}</p>
     </article>
