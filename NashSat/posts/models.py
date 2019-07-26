@@ -35,7 +35,16 @@ class Posts(models.Model):
     created_at = models.DateTimeField(default=datetime.datetime.now)
     post_image_full = ResizedImageField(upload_to=get_image_path, blank=False, null=True, force_format='JPEG')
     post_image_thumb = ResizedImageField(size=[500, 600], crop=['middle', 'center'], upload_to=get_thumbnail_path, blank=False, null=True, force_format='JPEG')
-
+    '''
+    NOTE: The following code has been added to django_resized.ResizedImageField.save(): 
+    
+            if self.field.force_format in ['JPEG', 'JPG', 'jpeg', 'jpg']:
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
+                
+    This is to ensure that if the uploaded image is not a JPEG image it gets flattened as needed.
+    Ryan Mansoor 
+    '''
     def __str__(self):
         return self.title
 
