@@ -135,10 +135,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_ROOT = '.Nashsat/posts/template/posts/'
 # STATIC_URL = '.Nashsat/posts/template/posts/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'posts', 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'posts', 'static')
+STATICFILES_DIRS = (
+    # location of your application, should not be public web accessible
+    os.path.join(BASE_DIR, 'posts', 'static'),
+)
 #STATIC_ROOT = os.path.join(BASE_DIR, 'posts', 'templates', 'posts')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'posts', 'static', 'media')
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 #
 # for r, d, f, in os.walk(STATIC_ROOT):
 #     for directories in d:

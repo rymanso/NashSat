@@ -44,17 +44,23 @@
 
 				<!-- One -->
 					<section id="one">
-						<header class="major">
-							<h2>Welcome</h2>
-						</header>
-						<p>I am an artist</p>
 
-					</section>
+      			<ul class="actions fit">
+                <li><a href="../../" class="button secondary fit"><p class="fa fa-home"></p></a>
+
+                </li>
+
+                </ul>
 
 
-				<!-- Two -->
-					<section id="two">
-						<h2>Recent Work</h2>
+
+<!--						<header class="major">-->
+<!--							<h2>Welcome</h2>-->
+<!--						</header>-->
+<!--						<p>I am an artist</p>-->
+
+
+						<h2>Last Uploaded</h2>
 						<div class="row">
 						{% block content%}
 						{% endblock %}
@@ -424,9 +430,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+
+						<li><a href="https://twitter.com/nashsat" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://www.instagram.com/nashsat" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="mailto: nashida.sattar@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+
+
 
 					</ul>
 					<ul class="copyright">
@@ -438,12 +447,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="static/assets/js/jquery.min.js"></script>
-			<script src="static/assets/js/jquery.poptrox.min.js"></script>
-			<script src="static/assets/js/browser.min.js"></script>
-			<script src="static/assets/js/breakpoints.min.js"></script>
-			<script src="static/assets/js/util.js"></script>
-			<script src="static/assets/js/main.js"></script>
+			<script src="{% static "assets/js/jquery.min.js" %}"></script>
+			<script src="{% static "assets/js/jquery.poptrox.min.js" %}"></script>
+			<script src="{% static "assets/js/browser.min.js" %}"></script>
+			<script src="{% static "assets/js/breakpoints.min.js" %}"></script>
+			<script src="{% static "assets/js/util.js" %}"></script>
+			<script src="{% static "assets/js/main.js" %}"></script>
 
 	</body>
 </html>

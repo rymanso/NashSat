@@ -1,0 +1,44 @@
+{% extends 'posts/layout.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
+<!--<u1 class = "collection">-->
+
+    {% for post in posts %}
+<!--    <a class="collection-item" href="/posts/details/{{post.id}}">{{post.title}}</a>-->
+    <article class="col-6 col-12-xsmall work-item" href="/posts/details/{{post.id}}">
+	<a class="image fit thumb" href= "{% get_static_prefix %}media/{{post.post_image_full}}"><img src="{% get_static_prefix %}media/{{post.post_image_thumb}}"alt="" /></a>
+        <h3>{{post.title}}</h3>
+        <p>{{post.created_at}}</p>
+    </article>
+    {% endfor %}
+
+
+
+
+               <ul class="actions fit">
+                    <script>
+            function getURL() {
+            var url = window.location.pathname;
+            var page_array = url.split("/");
+            page_no = page_array[page_array.length - 2];
+            // alert("The URL of this page is: " + page_no);
+            page = parseInt(page_no);
+            page += 1;
+            page_array[page_array.length -2] = page.toString();
+            var new_url = page_array.join("/");
+            window.open(new_url, "_self")
+            }
+
+            </script>
+
+
+                <li><a href="javascript:getURL()" class="button secondary fit"><p class="fa fa-angle-right"></p></a>
+
+                </li>
+
+                </ul>
+
+
+<!--</u1>-->
+{% endblock %}

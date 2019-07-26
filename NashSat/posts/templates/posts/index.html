@@ -3,15 +3,23 @@
 {% block content %}
 <link rel="stylesheet" href="{% static "assets/css/main.css" %}" />
 <!--<u1 class = "collection">-->
+
+
     {% for post in posts %}
 <!--    <a class="collection-item" href="/posts/details/{{post.id}}">{{post.title}}</a>-->
-    <article class="col-6 col-12-xsmall work-item" href="/posts/details/{{post.id}}">
+    <article class="col-6 col-12-xsmall work-item">
 	<a class="image fit thumb" href= "{% get_static_prefix %}media/{{post.post_image_full}}"><img src="{% get_static_prefix %}media/{{post.post_image_thumb}}"alt="" /></a>
         <h3>{{post.title}}</h3>
-        <p>{{post.body}}</p>
+        <p>{{post.created_at}}</p>
+
     </article>
     {% endfor %}
+            <br>
+            <ul class="actions fit">
+                <li><a href="/page/2" class="button secondary fit"><p class="fa fa-angle-right"></p></a>
 
+                </li>
 
+                </ul>
 <!--</u1>-->
 {% endblock %}

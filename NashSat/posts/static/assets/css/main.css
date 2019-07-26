@@ -2208,6 +2208,29 @@ input, select, textarea {
 				font-size: 1.5em;
 			}
 
+	ul.icons2 {
+		list-style: none;
+		padding-left: 10em;
+		padding-right: 0em;
+		text-decoration: none!important;
+
+
+	}
+
+		ul.icons2 li {
+			display: inline-block;
+			padding: 0 1em 0 0;
+		}
+
+			ul.icons li:last-child {
+				padding-right: 0;
+			}
+
+			ul.icons li .icon:before {
+				font-size: 1.5em;
+			}
+
+
 /* Labeled Icons */
 
 	ul.labeled-icons {
