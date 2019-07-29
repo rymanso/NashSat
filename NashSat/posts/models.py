@@ -29,8 +29,8 @@ def get_thumbnail_path(instance, filename):
 class Posts(models.Model):
     title = models.CharField(max_length=200, blank=True)
     body = models.TextField(blank=True)
-    created_at = models.DateTimeField(default=datetime.datetime.now)
-    #created_at = models.DateField(default=datetime.datetime.now, auto_now_add=True)
+    # created_at = models.DateTimeField(default=datetime.datetime.now)
+    created_at = models.DateField(default=datetime.datetime.now)
     post_image_full = ResizedImageField(upload_to=get_image_path, blank=False, null=True, force_format='JPEG')
     post_image_thumb = ResizedImageField(size=[500, 600], crop=['middle', 'center'], upload_to=get_thumbnail_path, blank=False, null=True, force_format='JPEG')
     '''

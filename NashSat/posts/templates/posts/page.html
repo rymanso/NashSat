@@ -18,7 +18,7 @@
 
                <ul class="actions fit">
                     <script>
-            function getURL() {
+            function getNextURL() {
             var url = window.location.pathname;
             var page_array = url.split("/");
             page_no = page_array[page_array.length - 2];
@@ -31,11 +31,24 @@
             }
 
             </script>
+            <script>function getPrevURL() {
+            var url = window.location.pathname;
+            var page_array = url.split("/");
+            page_no = page_array[page_array.length - 2];
+            // alert("The URL of this page is: " + page_no);
+            page = parseInt(page_no);
+            if(page > 1){
+                page -= 1;
+                }
+            page_array[page_array.length -2] = page.toString();
+            var new_url = page_array.join("/");
+            window.open(new_url, "_self")
+            }</script>
 
-
-                <li><a href="javascript:getURL()" class="button secondary fit"><p class="fa fa-angle-right"></p></a>
-
+                   <li><a href="javascript:getPrevURL()" class="button secondary fit"><p class="fa fa-angle-left"></p></a></li>
+                       <li><a href="../../" class="button secondary fit"><p class="fa fa-home"></p></a>
                 </li>
+                <li><a href="javascript:getNextURL()" class="button secondary fit"><p class="fa fa-angle-right"></p></a></li>
 
                 </ul>
 

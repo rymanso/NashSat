@@ -21,6 +21,7 @@ def page(request, page=1):
     posts = Posts.objects.all()
     posts = posts[::-1]
     posts = posts[(page-1)*10:page*10]
+
     context = {
         'title': 'Latest Posts',
         'posts': posts,
