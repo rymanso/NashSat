@@ -1,5 +1,5 @@
 client==0.0.1
-Django==2.2.3
+Django==2.2.24
 django-resized==0.3.9
 mysql==0.0.2
 mysqlclient==1.4.2.post1
